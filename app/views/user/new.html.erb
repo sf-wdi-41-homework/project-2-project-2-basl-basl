@@ -1,0 +1,10 @@
+<div class="signup-form">
+  <h1>Sign Up</h1>
+  <%= form_for :user, url: '/user' do |f| %>
+  <%= f.text_field :name, placeholder: "Name", class: 'individual-form'%><br>
+  <%= f.text_field :email, placeholder: "email address", class: 'individual-form' %><br>
+  <%= f.text_field :phone, placeholder: "Phone Number", class: 'individual-form'%><br>
+  <%= f.password_field :password, placeholder: "Password", class: 'individual-form'%><br>
+  <%= f.submit "Submit" %>
+  <% end %>
+</div>
