@@ -1,13 +1,27 @@
 <header id="header">
   <div class="container">
 
-
-
     <nav id="nav-menu-container">
       <ul class="nav-menu">
-        <li><a href="/sessions/new">Login</a></li>
-        <li><a href="/user/new">Signup</a></li>
-          </ul>
+        <li>
+          <a href="/sessions/new">Login</a>
         </li>
-    </nav>
+        <li>
+          <a href="/user/new">Signup</a>
+        </li>
+      </ul>
+    </li>
+  </nav>
+
 </header>
+
+<h2>Recipe Directory:</h2>
+<br/>
+<%= form_tag('/search', method: "get", id: "recipe-search") do %>
+<%= text_field_tag :search, params[:search_term], placeholder: "Search Recipes" %>
+<%= submit_tag("Search", class: "search-recipe") %>
+<% end %>
+<br/>
+<ul>
+
+</ul>
