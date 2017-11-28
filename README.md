@@ -11,17 +11,21 @@ _Sprint 1_
 + If no results, show sad no results message
 
 _Sprint 2_
++ User authentication
++ Store API results in database
+
+_Sprint 3_
 + Ability for users to save recipes and delete recipes that were saved
 + Save ingredients from last search for user
 + Ability to set and save dietary preferences
 
-_Sprint 3_
+_Sprint 4_
 + Ability to send recipes to email or text
 + Donation button to keep website ad free
 
 
 
-Team Members:
+###Team Members:
 + Beth Witten // https://github.com/brwitten
 + Austin Olsen // https://github.com/austinolsen
 + Levi Perry // https://github.com/lperry34
