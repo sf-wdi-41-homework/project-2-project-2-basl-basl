@@ -23,7 +23,11 @@ _Sprint 4_
 + Ability to send recipes to email or text
 + Donation button to keep website ad free
 
-
+### Technologies Used
+_in progress_
++ Ruby
++ Ruby on Rails
++ Spoonacular API
 
 ###Team Members:
 + Beth Witten // https://github.com/brwitten
