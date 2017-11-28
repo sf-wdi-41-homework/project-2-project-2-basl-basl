@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :basil
   resources :user
   resources :sessions
-
+  resources :profile
 end
