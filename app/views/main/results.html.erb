@@ -5,9 +5,10 @@
  <%= submit_tag("Search", class: "search-recipe") %>
 <% end %>
 <br />
+These are your results:
 <ul>
-<% @response.each do |recipe| %>
-<li><strong><%= recipe["title"]  %></strong></li>
-<li><img src="<%= recipe["image"]  %>" height=100px></img></li>
-<% end %>
+  <% @response.each do |recipe| %>
+    <li><strong><%= recipe["title"]  %> </strong><br>
+    <img src="<%= recipe["image"]  %>" height=100px></img></li>
+  <% end %>
 </ul>
