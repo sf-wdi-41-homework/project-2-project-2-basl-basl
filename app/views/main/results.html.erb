@@ -1,10 +1,117 @@
+<div class="container">
+
+  <nav id="nav-menu-container">
+    <ul class="nav-menu">
+      <li>
+        <a href="/sessions/new">Login</a>
+      </li>
+      <li>
+        <a href="/user/new">Signup</a>
+      </li>
+    </ul>
+  </li>
+</nav>
+
+
 <h2>Recipe Directory:</h2>
-<br />
+
+<h1>Ingredients</h1>
+
+
+<div class="whole-ingredients">
+<div class="group-1">
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="ham"/>ingredient-1</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="flour"/>ingredient-2</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-3</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-4</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-5</label>
+</div>
+</div>
+
+<div class="group-2">
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-6</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-7</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-8</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-9</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-10</label>
+</div>
+</div>
+
+<div class="group-3">
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-11</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-12</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-13</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-14</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-15</label>
+</div>
+</div>
+
+<div class="group-4">
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-16</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1">Ingredinet-17</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-18</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-19</label>
+</div>
+<div class="ingredient">
+<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-20</label>
+</div>
+</div>
+</div>
+
+
+
+<div class="recipe">
+<%= text_field_tag :search, params[:search_term], placeholder: "Add Single Ingredient", class: "single"%>
+<%= submit_tag("+", class: "add") %>
+</div>
+
+<div class="recipe">
 <%= form_tag('/search', method: "get", id: "recipe-search") do %>
- <%= text_field_tag :search, params[:search_term], placeholder: "Search Recipes" %>
- <%= submit_tag("Search", class: "search-recipe") %>
+<%= text_field_tag :search, params[:search_term], placeholder: "Search Recipes", class: "searchbar", type: "hidden"%>
+<%= submit_tag("Search", class: "search-recipe") %>
 <% end %>
-<br />
+</div>
+
+
+
+
+
+
+
 These are your results:
 <ul>
   <% @response.each do |recipe| %>
