@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :sessions
   resources :profile
   resources :main
+  get "/search"  => "main#get_recipe"
+
 end

@@ -1,0 +1,13 @@
+<h2>Recipe Directory:</h2>
+<br />
+<%= form_tag('/search', method: "get", id: "recipe-search") do %>
+ <%= text_field_tag :search, params[:search_term], placeholder: "Search Recipes" %>
+ <%= submit_tag("Search", class: "search-recipe") %>
+<% end %>
+<br />
+<ul>
+<% @response.each do |recipe| %>
+<li><strong><%= recipe["title"]  %></strong></li>
+<li><img src="<%= recipe["image"]  %>" height=100px></img></li>
+<% end %>
+</ul>
