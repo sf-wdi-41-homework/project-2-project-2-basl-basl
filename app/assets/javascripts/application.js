@@ -23,7 +23,14 @@ $(document).ready(function(){
         var string = $checks.filter(":checked").map(function(i,v){
             return this.value + ",";
         }).get().join(" ");
-        $('.searchbar').val(string);
-
+        firstValue = $('.searchbar').val(string);
     }).trigger('change');
+
+
+    $('.add').on('click', function(e){
+      e.preventDefault();
+      var single_item = $('.single').val()
+      $('.searchbar').val(firstValue.val() + single_item + ",");
+
+  })
 });
