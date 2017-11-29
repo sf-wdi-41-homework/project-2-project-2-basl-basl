@@ -21,10 +21,10 @@
 <div class="whole-ingredients">
 <div class="group-1">
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-1</label>
+<label><input id="accept" name="accept" type="checkbox" value="ham"/>ingredient-1</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-2</label>
+<label><input id="accept" name="accept" type="checkbox" value="flour"/>ingredient-2</label>
 </div>
 <div class="ingredient">
 <label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-3</label>
@@ -98,7 +98,7 @@
 
 <div class="recipe">
 <%= form_tag('/search', method: "get", id: "recipe-search") do %>
-<%= text_field_tag :search, params[:search_term], placeholder: "Search Recipes" %>
+<%= text_field_tag :search, params[:search_term], placeholder: "Search Recipes", class: "searchbar"%>
 <%= submit_tag("Search", class: "search-recipe") %>
 <% end %>
 </div>
