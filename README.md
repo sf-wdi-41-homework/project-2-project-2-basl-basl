@@ -30,7 +30,7 @@ _in progress_
 + Spoonacular API
 + HTTParty
 
-###Team Members:
+### Team Members:
 + Beth Witten // https://github.com/brwitten
 + Austin Olsen // https://github.com/austinolsen
 + Levi Perry // https://github.com/lperry34
