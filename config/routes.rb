@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :main
   get "/search"  => "main#get_recipe"
   get "/logout"  => "sessions#destroy"
+  get "/edit" => "user#edit"
 end
