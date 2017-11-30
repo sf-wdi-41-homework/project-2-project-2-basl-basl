@@ -16,11 +16,10 @@
 </div>
 
 <div>
-  <p>Your saved recipes:</p>
-
-<a> Welcome, your user id is: <%= current_user.id %> and your favorite recipes are:
-
-<%= @my_recipes %>
-
-
+  <a> Your saved recipes: <br> </a>
+  <ul>
+    <% @recipe_list.each do |recipe| %>
+      <li><strong><%= recipe.title  %> </strong></li>
+    <% end %>
+  </ul>
 </div>
