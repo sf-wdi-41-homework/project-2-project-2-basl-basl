@@ -1,9 +1,10 @@
 <% if current_user %>
-  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %> | <%= link_to "Settings", edit_user_path %>
+  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
 
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
+
 
 
 
@@ -15,6 +16,7 @@
   <p><strong>Phone:</strong> 555-555-5555 <br>
   <strong>Email:</strong> bwitten@yahoo.com</p>
 </div>
+<a href="/edit">Edit Info</a>
 
 <div>
   <a> Your saved recipes: <br> </a>
