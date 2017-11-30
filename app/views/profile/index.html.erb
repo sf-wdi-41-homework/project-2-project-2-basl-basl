@@ -4,7 +4,7 @@
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
 
-<%= yield %>
+
 
 <div class="profile-pic">
   <img class="beth" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAIA_wDGAAAAAQAAAAAAAAn6AAAAJGI1MzAwNzZhLWZkZTYtNDIzYS1iYzQ4LTkyY2UwN2EzMDBjMw.jpg">
@@ -16,11 +16,10 @@
 </div>
 
 <div>
-  <p>Your saved recipes:</p>
-
-  <% if current_user %>
-    <a> Welcome, your user id is: <%= current_user.id %> </a>
-  <% end %>
-
-
+  <a> Your saved recipes: <br> </a>
+  <ul>
+    <% @recipe_list.each do |recipe| %>
+      <li><strong><%= recipe.title  %> </strong></li>
+    <% end %>
+  </ul>
 </div>
