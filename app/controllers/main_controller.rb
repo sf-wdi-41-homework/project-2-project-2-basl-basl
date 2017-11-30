@@ -8,7 +8,7 @@ class MainController < ApplicationController
     puts params[:search]
     passed_ingredient = params[:search]
     puts passed_ingredient
-    response = HTTParty.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=#{passed_ingredient}&instructionsRequired=true&limitLicense=false&number=20&ranking=1",
+    response = HTTParty.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=#{passed_ingredient}&instructionsRequired=true&limitLicense=false&number=8&ranking=1",
     headers:{
       "X-Mashape-Key" => @@mashape_key,
       "Accept" => "application/json"

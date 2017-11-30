@@ -1,93 +1,102 @@
-<div class="container">
 
-  <nav id="nav-menu-container">
-    <ul class="nav-menu">
-      <li>
-        <a href="/sessions/new">Login</a>
-      </li>
-      <li>
-        <a href="/user/new">Signup</a>
-      </li>
-    </ul>
-  </li>
+<% if current_user %>
+<div class="row">
+<nav id="nav-menu-container">
+  <ul class="nav-menu">
+    <li>
+      <a href="/logout">Logout</a>
+    </li>
+  </ul>
 </nav>
+</div>
+    <% else %>
+    <div class="row">
+    <nav id="nav-menu-container">
+      <ul class="nav-menu">
+        <li>
+          <a href="/sessions/new">Login</a>
+        </li>
+        <li>
+          <a href="/user/new">Signup</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+<% end %>
 
 
-<h2>Recipe Directory:</h2>
-
-<h1>Ingredients</h1>
 
 
 <div class="whole-ingredients">
 <div class="group-1">
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="ham"/>ingredient-1</label>
+<label><input id="accept" name="accept" type="checkbox" value="milk"/>       milk</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="flour"/>ingredient-2</label>
+<label><input id="accept" name="accept" type="checkbox" value="eggs"/>        eggs</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-3</label>
+<label><input id="accept" name="accept" type="checkbox" value="bananas"/>   bananas</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-4</label>
+<label><input id="accept" name="accept" type="checkbox" value="onions"/>     onions</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-5</label>
+<label><input id="accept" name="accept" type="checkbox" value="apples"/>     apples</label>
 </div>
 </div>
 
 <div class="group-2">
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-6</label>
+<label><input id="accept" name="accept" type="checkbox" value="flour"/>      flour</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-7</label>
+<label><input id="accept" name="accept" type="checkbox" value="butter"/>     butter</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-8</label>
+<label><input id="accept" name="accept" type="checkbox" value="mustard"/>    mustard</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-9</label>
+<label><input id="accept" name="accept" type="checkbox" value="chicken"/>    chicken</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-10</label>
+<label><input id="accept" name="accept" type="checkbox" value="cold cuts"/> cold cuts</label>
 </div>
 </div>
 
 <div class="group-3">
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-11</label>
+<label><input id="accept" name="accept" type="checkbox" value="bread"/>         bread</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-12</label>
+<label><input id="accept" name="accept" type="checkbox" value="juice"/>         juice</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-13</label>
+<label><input id="accept" name="accept" type="checkbox" value="cheese"/>        cheese</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-14</label>
+<label><input id="accept" name="accept" type="checkbox" value="cream cheese"/>   cream</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-15</label>
+<label><input id="accept" name="accept" type="checkbox" value="carrots"/>      carrots</label>
 </div>
 </div>
 
 <div class="group-4">
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-16</label>
+<label><input id="accept" name="accept" type="checkbox" value="salt"/>           salt</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1">Ingredinet-17</label>
+<label><input id="accept" name="accept" type="checkbox" value="pepper">        pepper</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-18</label>
+<label><input id="accept" name="accept" type="checkbox" value="spices"/>       spices</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-19</label>
+<label><input id="accept" name="accept" type="checkbox" value="rice"/>           rice</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="1"/>ingredient-20</label>
+<label><input id="accept" name="accept" type="checkbox" value="fruit"/>         fruit</label>
 </div>
 </div>
 </div>
@@ -101,7 +110,7 @@
 
 
 <div class="confirm-box">
-  <p class="confirm">Your Ingredients:     </p>
+  <p class="confirm">Your Ingredients:  </p>
 </div>
 
 
@@ -114,15 +123,16 @@
 
 
 
+<div class="container results">
+<div class="row">
 
 
-
-
-
-These are your results:
-<ul>
   <% @response.each do |recipe| %>
-    <li><strong><%= recipe["title"]  %> </strong><br>
-    <img src="<%= recipe["image"]  %>" height=100px></img></li>
+  <div class="col-sm-2 spots">
+    <p class="indiv"><strong> </strong><br>
+    <img src="<%= recipe["image"]  %>" height=200vh width=150%></img><%= recipe["title"]  %></p>
+  </div>
   <% end %>
-</ul>
+
+</div>
+</div>
