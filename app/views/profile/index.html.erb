@@ -1,5 +1,6 @@
 <% if current_user %>
-  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
+  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %> | <%= link_to "Settings", edit_user_path %>
+
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
