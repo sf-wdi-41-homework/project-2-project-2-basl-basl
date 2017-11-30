@@ -99,12 +99,19 @@
 <%= submit_tag("+", class: "add") %>
 </div>
 
+
+<div class="confirm-box">
+  <p class="confirm">Your Ingredients:     </p>
+</div>
+
+
 <div class="recipe">
 <%= form_tag('/search', method: "get", id: "recipe-search") do %>
 <%= text_field_tag :search, params[:search_term], placeholder: "Search Recipes", class: "searchbar", type: "hidden"%>
 <%= submit_tag("Search", class: "search-recipe") %>
 <% end %>
 </div>
+
 
 
 

@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   resources :profile
   resources :main
   get "/search"  => "main#get_recipe"
-
 end
