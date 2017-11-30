@@ -6,3 +6,15 @@
   <p><strong>Phone:</strong> 555-555-5555 <br>
   <strong>Email:</strong> bwitten@yahoo.com</p>
 </div>
+
+<div>
+  <p>Your saved recipes:</p>
+
+</div>
+
+<ul>
+  <% @recipe.each do |recipe| %>
+    <li><strong><%= recipe["title"]  %> </strong><br>
+    <img src="<%= recipe["image"]  %>" height=100px></img></li>
+  <% end %>
+</ul>
