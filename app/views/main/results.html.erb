@@ -131,6 +131,9 @@
   <div class="col-sm-2 spots">
     <p class="indiv"><strong> </strong><br>
     <img src="<%= recipe["image"]  %>" height=200vh width=150%></img><%= recipe["title"]  %></p>
+    <% if current_user %>
+      <button> Save Recipe </button>
+    <% end %>
   </div>
   <% end %>
 
