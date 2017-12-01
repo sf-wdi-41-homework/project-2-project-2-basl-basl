@@ -19,7 +19,9 @@
 </div>
 </div>
 
-  <a> Your saved recipes: <br> </a>
+<div class="saved">
+  <h3> Your saved recipes: </h3><br>
+</div>
   <ul>
     <% @recipe_list.each do |recipe| %>
       <li><strong><%= recipe.title  %> </strong></li>
