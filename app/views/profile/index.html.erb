@@ -1,26 +1,27 @@
-<% if current_user %>
-  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %> | <%= link_to "Settings", edit_user_path %>
-
-<% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-<% end %>
-
-
+<div class="profile">
+<div class="row">
+<nav id="nav-menu-container">
+  <ul class="nav-menu">
+    <li >
+      <a href="/logout" class="log">Logout</a>
+    </li>
+  </ul>
+</nav>
+</div>
 
 <div class="profile-pic">
   <img class="beth" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAIA_wDGAAAAAQAAAAAAAAn6AAAAJGI1MzAwNzZhLWZkZTYtNDIzYS1iYzQ4LTkyY2UwN2EzMDBjMw.jpg">
 </div>
 
 <div class="info">
-  <p><strong>Phone:</strong> 555-555-5555 <br>
-  <strong>Email:</strong> bwitten@yahoo.com</p>
+  <p><strong>Phone:</strong> 555-555-555 <br>
+  <div class="email"><strong>Email:</strong> <%= current_user.email %> <a href="/edit"> <i class="fa fa-pencil" aria-hidden="true"></i></a></p></div>
+</div>
 </div>
 
-<div>
   <a> Your saved recipes: <br> </a>
   <ul>
     <% @recipe_list.each do |recipe| %>
       <li><strong><%= recipe.title  %> </strong></li>
     <% end %>
   </ul>
-</div>
