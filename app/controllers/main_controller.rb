@@ -31,8 +31,9 @@ class MainController < ApplicationController
     recipe_title = "#{params["recipe_title"]}"
     puts "USER ID: #{current_user.id}"
     Recipe.find_or_create_by(title:"#{params["recipe_title"]}")
-   # when save recipe is clicked we need to make two db calls
-   #  first db call, does find_or_create_by the recipe (1) title, (2) image url, (3) api recipe id
+    new_recipe = Recipe.find_by_title("#{params["recipe_title"]}")
+    current_user.recipes << new_recipe
+
    #  second db call, does find_or_create_by for the current_user id and recipe id (NOT api id)
    redirect_to('/profile')
   end
