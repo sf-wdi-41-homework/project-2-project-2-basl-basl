@@ -15,7 +15,10 @@
 
 <div class="info">
   <p><strong>Phone:</strong> 555-555-555 <br>
-  <div class="email"><strong>Email:</strong> <%= current_user.email %> <a href="/edit"> <i class="fa fa-pencil" aria-hidden="true"></i></a></p></div>
+  <div class="email"><strong>Email:</strong> <%= current_user.email %> <a href="/edit"> <i class="fa fa-pencil" aria-hidden="true"></i></a> <br>
+  <a href="/search"> Back to Search </a>
+  </p></div>
+
 </div>
 </div>
 
@@ -25,5 +28,6 @@
   <ul>
     <% @recipe_list.each do |recipe| %>
       <li><strong><%= recipe.title  %> </strong></li>
+      <p><%= button_to "Delete This Recipe", '/delete', method: "delete", id: "delete_recipe" %></p>
     <% end %>
   </ul>

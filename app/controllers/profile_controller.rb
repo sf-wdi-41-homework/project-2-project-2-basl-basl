@@ -8,5 +8,7 @@ class ProfileController < ApplicationController
     end
   end
 
+  def delete_recipe
+  end  
 
 end
