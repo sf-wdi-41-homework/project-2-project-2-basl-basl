@@ -33,9 +33,7 @@ class MainController < ApplicationController
     Recipe.find_or_create_by(title:"#{params["recipe_title"]}")
     new_recipe = Recipe.find_by_title("#{params["recipe_title"]}")
     current_user.recipes << new_recipe
-
-   #  second db call, does find_or_create_by for the current_user id and recipe id (NOT api id)
-   redirect_to('/profile')
+    redirect_to('/profile')
   end
 
 end
