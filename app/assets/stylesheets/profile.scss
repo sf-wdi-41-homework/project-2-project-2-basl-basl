@@ -12,8 +12,18 @@
   margin-top: 1%;
 }
 .profile{
-  background-image: url();
+  -moz-box-shadow: 0 1px 1px;
+-webkit-box-shadow: 0 0   25px 0;
+        box-shadow: 0 0   25px 0;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        background-image: url(https://cdn-images-1.medium.com/max/1920/1*AcYLHh0_ve4TNRi6HLFcPA.jpeg);
 }
 .log{
   color:white;
+}
+
+.saved{
+  text-align: center;
 }
