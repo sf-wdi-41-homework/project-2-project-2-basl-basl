@@ -28,6 +28,10 @@
   <ul>
     <% @recipe_list.each do |recipe| %>
       <li><strong><%= recipe.title  %> </strong></li>
-      <p><%= button_to "Delete This Recipe", '/delete', method: "delete", id: "delete_recipe" %></p>
+      <p>
+        <%= form_tag('/delete', method: "delete", id: "delete_recipe") %>
+        <input type="hidden" name="recipe_title" value="<%= recipe["title"] %>"/>
+        <button> Delete Recipe </button>
+      </p>
     <% end %>
   </ul>
