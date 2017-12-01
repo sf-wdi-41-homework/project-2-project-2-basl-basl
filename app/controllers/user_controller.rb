@@ -19,6 +19,19 @@ class UserController < ApplicationController
       redirect_to '/user/new'
     end
   end
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user= User.find(current_user.id)
+    userInfo=user_params
+    if @user.update(userInfo)
+      redirect_to '/profile'
+    else
+      render(edit)
+    end
+  end
 
   private
   def user_params

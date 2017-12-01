@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get "/logout"  => "sessions#destroy"
   post "/save_recipe" => "main#save_recipe"
   get "/edit" => "user#edit"
+  delete "/delete/:id" => "profile#delete_recipe"
 end

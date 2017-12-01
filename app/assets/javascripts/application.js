@@ -5,8 +5,7 @@
 //= require jquery3
 
 
-
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
     $checks = $(":checkbox");
     $checks.on('change', function() {
         var string = $checks.filter(":checked").map(function(i,v){

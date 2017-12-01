@@ -457,7 +457,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .section-header .section-description {
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 1%;
   color: #999;
 }
 
@@ -496,9 +496,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 50px;
   text-align: center;
   border: 1px solid #e6e6e6;
-  height: 200px;
+  height: 35vh;
   position: relative;
   background: #fafafa;
+  width: 100%;
 }
 
 #services .icon {
