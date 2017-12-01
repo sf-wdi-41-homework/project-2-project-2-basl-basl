@@ -78,8 +78,9 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: basl-project-2_production
+ production:
+   <<: *default
+   adapter: postgresql
+   database: db/production.sqlite3
   username: basl-project-2
   password: <%= ENV['BASL-PROJECT-2_DATABASE_PASSWORD'] %>
