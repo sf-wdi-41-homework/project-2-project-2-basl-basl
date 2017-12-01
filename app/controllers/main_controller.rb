@@ -11,6 +11,7 @@ class MainController < ApplicationController
     "Accept" => "application/json"
   }
   @response = response
+  puts response.count 
 
   response.each do |recipe_id|
     second_response = HTTParty.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/#{recipe_id["id"]}/information?includeNutrition=false",

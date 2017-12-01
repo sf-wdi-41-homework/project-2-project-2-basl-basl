@@ -138,45 +138,48 @@
 <div class="row">
 
 
-
-  <% @response.each do |recipe| %>
-  <div class="col-sm-3 spots">
-    <p class="indiv"><br>
-    <img src="<%= recipe["image"]  %>" height=220px ></img><strong><%= recipe["title"]  %></strong></p>
-    <div class="row">
-      <div class="col-sm-1">
-      </div>
-      <div class="col-sm-4 used">
-        <p><u>Used: <%= recipe["usedIngredientCount"] %></u></p>
-        <% recipe["usedIngredients"].each do |used| %>
-            <ul style="list-style: none;">
-              <li><%= used["name"].mb_chars.capitalize.to_s %></li>
-            </ul>
-        <% end %>
-      </div>
-      <div class="col-sm-1">
-      </div>
-      <div class="col-sm-4 missing">
-        <p><u>Missing: <%= recipe["missedIngredientCount"] %></u></p>
-        <% recipe["missedIngredients"].each do |used| %>
-            <ul style="list-style: none;">
-              <li><%= used["name"].mb_chars.capitalize.to_s %></li>
-            </ul>
-        <% end %>
+  <% if @response.count > 0 %>
+    <% @response.each do |recipe| %>
+    <div class="col-sm-3 spots">
+      <p class="indiv"><br>
+      <img src="<%= recipe["image"]  %>" height=220px ></img><strong><%= recipe["title"]  %></strong></p>
+      <div class="row">
         <div class="col-sm-1">
         </div>
+        <div class="col-sm-4 used">
+          <p><u>Used: <%= recipe["usedIngredientCount"] %></u></p>
+          <% recipe["usedIngredients"].each do |used| %>
+              <ul style="list-style: none;">
+                <li><%= used["name"].mb_chars.capitalize.to_s %></li>
+              </ul>
+          <% end %>
+        </div>
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-4 missing">
+          <p><u>Missing: <%= recipe["missedIngredientCount"] %></u></p>
+          <% recipe["missedIngredients"].each do |used| %>
+              <ul style="list-style: none;">
+                <li><%= used["name"].mb_chars.capitalize.to_s %></li>
+              </ul>
+          <% end %>
+          <div class="col-sm-1">
+          </div>
 
+        </div>
       </div>
-    </div>
-    <% if current_user %>
-      <%= form_tag('/save_recipe', method: "post", id: "save_recipe") do %>
-      <input type="hidden" name="recipe_id" value="<%= recipe["image"] %>"/>
-      <input type="hidden" name="recipe_title" value="<%= recipe["title"] %>"/>
-      <button> Save Recipe </button>
+      <% if current_user %>
+        <%= form_tag('/save_recipe', method: "post", id: "save_recipe") do %>
+        <input type="hidden" name="recipe_id" value="<%= recipe["image"] %>"/>
+        <input type="hidden" name="recipe_title" value="<%= recipe["title"] %>"/>
+        <button> Save Recipe </button>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
   <% end %>
+<% else %>
+    <h2 align="center"> No recipes available... time to go to the store! </h2>
+<% end %>
 
 </div>
 </div>
