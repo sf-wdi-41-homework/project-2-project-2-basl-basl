@@ -140,14 +140,40 @@
 
 
   <% @response.each do |recipe| %>
-  <div class="col-sm-2 spots">
-    <p class="indiv"><strong> </strong><br>
-    <img class="recipe-image" src="<%= recipe["image"]  %>" height=200vh width=150%></img><%= recipe["title"]  %></p>
+  <div class="col-sm-3 spots">
+    <p class="indiv"><br>
+    <img src="<%= recipe["image"]  %>" height=220px ></img><strong><%= recipe["title"]  %></strong></p>
+    <div class="row">
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-4 used">
+        <p><u>Used: <%= recipe["usedIngredientCount"] %></u></p>
+        <% recipe["usedIngredients"].each do |used| %>
+            <ul style="list-style: none;">
+              <li><%= used["name"].mb_chars.capitalize.to_s %></li>
+            </ul>
+        <% end %>
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-4 missing">
+        <p><u>Missing: <%= recipe["missedIngredientCount"] %></u></p>
+        <% recipe["missedIngredients"].each do |used| %>
+            <ul style="list-style: none;">
+              <li><%= used["name"].mb_chars.capitalize.to_s %></li>
+            </ul>
+        <% end %>
+        <div class="col-sm-1">
+        </div>
+
+      </div>
+    </div>
     <% if current_user %>
-      <%= form_tag('/save_recipe', method: "post", id: "save_recipe") %>
+      <%= form_tag('/save_recipe', method: "post", id: "save_recipe") do %>
       <input type="hidden" name="recipe_id" value="<%= recipe["image"] %>"/>
       <input type="hidden" name="recipe_title" value="<%= recipe["title"] %>"/>
       <button> Save Recipe </button>
+      <% end %>
     <% end %>
   </div>
   <% end %>
