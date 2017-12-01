@@ -1,5 +1,7 @@
 # BASIL
 
+Visit Basil today: https://basly.herokuapp.com/
+
 ### What does Basil do?
 Basil solves the problem of finding recipes based off of the ingredients that you have available at home. Through Basil you input the ingredients you have at home and we will return a list of recipes that you could make with those ingredients. For each recipe that we return, we highlight the used ingredients and any additional ingredients that you would need to make the recipe.
 
