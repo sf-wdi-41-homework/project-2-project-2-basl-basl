@@ -21,6 +21,5 @@ $(document).on('turbolinks:load', function() {
       var single_item = $('.single').val()
       var check = $('.searchbar').val(firstValue.val() + single_item + ",");
       $('.confirm').text("Your Ingredients:   " + $('.searchbar').val());
-
   })
 });
