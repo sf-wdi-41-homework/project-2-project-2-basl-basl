@@ -10,12 +10,16 @@
 
 .group-1{
   display: inline-block;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .group-2{
   display: inline-block;
+  margin-right: 5%;
 }
 .group-3{
   display: inline-block;
+  margin-right: 5%;
 }
 .group-4{
   display: inline-block;
@@ -24,6 +28,28 @@
 .whole-ingredients{
   text-align: center;
 }
+
+.search-recipe{
+  background-color: grey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.add{
+  background-color: grey;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 
 .recipe{
   margin-top: 1%;
@@ -53,8 +79,6 @@ label{
   border-color: grey;
 }
 
-
-
 .indiv{
   display: inline-block;
 }
@@ -63,4 +87,40 @@ label{
 margin-right: 3%;
 margin-left: 3%;
 margin-bottom: 3%;
+}
+
+.box h3{
+  text-align:center;
+	position:relative;
+	top:80px;
+}
+.box {
+	width:70%;
+	height:200px;
+	background:#FFF;
+	margin:40px auto;
+}
+/*==================================================
+ * Effect 1
+ * ===============================================*/
+.effect1{
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+}
+
+label {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+#accept {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
 }
