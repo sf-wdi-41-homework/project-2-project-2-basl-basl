@@ -142,10 +142,11 @@
     <p class="indiv"><strong> </strong><br>
     <img src="<%= recipe["image"]  %>" height=200vh width=150%></img><%= recipe["title"]  %></p>
     <% if current_user %>
-      <%= form_tag('/save_recipe', method: "post", id: "save_recipe") %>
+      <%= form_tag('/save_recipe', method: "post", id: "save_recipe") do %>
       <input type="hidden" name="recipe_id" value="<%= recipe["image"] %>"/>
       <input type="hidden" name="recipe_title" value="<%= recipe["title"] %>"/>
       <button> Save Recipe </button>
+      <% end %>
     <% end %>
   </div>
   <% end %>
