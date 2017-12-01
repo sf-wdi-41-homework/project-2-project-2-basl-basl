@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :main
   get "/search"  => "main#get_recipe"
   get "/logout"  => "sessions#destroy"
+  post "/save_recipe" => "main#save_recipe"
   get "/edit" => "user#edit"
 end

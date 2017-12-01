@@ -115,10 +115,10 @@
 
 
 <div class="recipe">
-<%= form_tag('/search', method: "get", id: "recipe-search") do %>
-<%= text_field_tag :search, params[:search_term], placeholder: "Search Recipes", class: "searchbar", type: "hidden"%>
-<%= submit_tag("Search", class: "search-recipe") %>
-<% end %>
+  <%= form_tag('/search', method: "get", id: "recipe-search") do %>
+  <%= text_field_tag :search, params[:search_term], placeholder: "Search Recipes", class: "searchbar", type: "hidden"%>
+  <%= submit_tag("Search", class: "search-recipe") %>
+  <% end %>
 </div>
 
 
@@ -132,7 +132,14 @@
     <p class="indiv"><strong> </strong><br>
     <img src="<%= recipe["image"]  %>" height=200vh width=150%></img><%= recipe["title"]  %></p>
     <% if current_user %>
+      <%= form_tag('/save_recipe', method: "post", id: "save_recipe") %>
+      <input type="hidden" name="recipe_id" value="<%= recipe["image"] %>"/>
+      <input type="hidden" name="recipe_title" value="<%= recipe["title"] %>"/>
       <button> Save Recipe </button>
+      <label>
+        <input name="image" value= "<%= recipe["image"]%>"/>
+        <input name="recipe_title" value="<%= recipe["title"] %>"/>
+      </label>
     <% end %>
   </div>
   <% end %>
