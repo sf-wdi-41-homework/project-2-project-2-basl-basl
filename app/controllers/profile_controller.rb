@@ -8,5 +8,16 @@ class ProfileController < ApplicationController
     end
   end
 
+  def delete_recipe
+    puts "#{params}"
+    puts "RECIPE TITLE #{params["recipe_title"]}"
+    puts current_user.id
+    # find recipe id
+    recipe_id = Recipe.where(title:"#{params["recipe_title"]}").pluck(:id)
+    # destroy in UserRecipe table for current user and recipe id
+    to_delete = UserRecipe.where(user_id:current_user.id,recipe_id:recipe_id)
+    to_delete.destroy_all
+    redirect_to('/profile')
+  end
 
 end

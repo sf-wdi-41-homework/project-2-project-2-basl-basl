@@ -10,12 +10,15 @@
 </div>
 
 <div class="profile-pic">
-  <img class="beth" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAIA_wDGAAAAAQAAAAAAAAn6AAAAJGI1MzAwNzZhLWZkZTYtNDIzYS1iYzQ4LTkyY2UwN2EzMDBjMw.jpg">
+  <img class="beth" height="200" src="https://cdn0.iconfinder.com/data/icons/avatars-3/512/avatar_hipster_guy-512.png">
 </div>
 
 <div class="info">
   <p><strong>Phone:</strong> 555-555-555 <br>
-  <div class="email"><strong>Email:</strong> <%= current_user.email %> <a href="/edit"> <i class="fa fa-pencil" aria-hidden="true"></i></a></p></div>
+  <div class="email"><strong>Email:</strong> <%= current_user.email %> <a href="/edit"> <i class="fa fa-pencil" aria-hidden="true"></i></a> <br>
+  <a href="/search"> Back to Search </a>
+  </p></div>
+
 </div>
 </div>
 
@@ -25,5 +28,10 @@
   <ul>
     <% @recipe_list.each do |recipe| %>
       <li><strong><%= recipe.title  %> </strong></li>
+      <p>
+        <%= form_tag('/delete', method: "delete", id: "delete_recipe") %>
+        <input type="hidden" name="recipe_title" value="<%= recipe["title"] %>"/>
+        <button> Delete Recipe </button>
+      </p>
     <% end %>
   </ul>
