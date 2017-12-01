@@ -25,13 +25,15 @@ class MainController < ApplicationController
   end
 
   def save_recipe
-    puts "RECIPE PARAMS #{params}"
+    puts "#{params}"
+    puts "RECIPE ID #{params["recipe_id"]}"
+    puts "RECIPE TITLE #{params["recipe_title"]}"
+    recipe_title = "#{params["recipe_title"]}"
     puts "USER ID: #{current_user.id}"
-
-   # when save recipe is clicked we need to make two db calls
-   #  first db call, does find_or_create_by the recipe (1) title, (2) image url, (3) api recipe id
-   #  second db call, does find_or_create_by for the current_user id and recipe id (NOT api id)
-   redirect_to('/profile')
+    Recipe.find_or_create_by(title:"#{params["recipe_title"]}")
+    new_recipe = Recipe.find_by_title("#{params["recipe_title"]}")
+    current_user.recipes << new_recipe
+    redirect_to('/profile')
   end
 
 end
