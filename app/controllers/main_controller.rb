@@ -25,7 +25,9 @@ class MainController < ApplicationController
   end
 
   def save_recipe
-    puts "RECIPE PARAMS #{params}"
+    puts "#{params}"
+    puts "RECIPE ID #{params["recipe_id"]}"
+    puts "RECIPE TITLE #{params["recipe_title"]}"
     puts "USER ID: #{current_user.id}"
 
    # when save recipe is clicked we need to make two db calls
