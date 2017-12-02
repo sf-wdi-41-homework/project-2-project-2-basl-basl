@@ -114,7 +114,7 @@
 
 
 <div class="recipe">
-<%= text_field_tag :search, params[:search_term], placeholder: "Add Single Ingredient", class: "single"%>
+<%= text_field_tag :search, params[:search_term], placeholder: "Add Single Ingredient", class: "single", :required => true, min:2%>
 <%= submit_tag("+", class: "add") %>
 </div>
 
@@ -139,6 +139,7 @@
 
 
 
+
   <% @response.each do |recipe| %>
   <div class="col-sm-3 spots">
     <div class="gallery">
@@ -156,7 +157,12 @@
     <% end %>
   </div>
 </div>
+
   <% end %>
+<% end %>
+<% if @response.count > 0 %>
+    <h2 align="center"> No recipes available... time to go to the store! </h2>
+<% end %>
 
 </div>
 </div>
