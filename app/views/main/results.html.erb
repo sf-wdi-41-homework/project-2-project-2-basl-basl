@@ -40,73 +40,73 @@
   <h3>Pick Ingredients:</h3>
 <div class="group-1">
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="milk"/>       milk</label>
+<label><input id="accept" name="accept" type="checkbox" value="milk"/>  milk</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="eggs"/>        eggs</label>
+<label><input id="accept" name="accept" type="checkbox" value="eggs"/> eggs</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="bananas"/>   bananas</label>
+<label><input id="accept" name="accept" type="checkbox" value="butter"/> butter</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="onions"/>     onions</label>
+<label><input id="accept" name="accept" type="checkbox" value="sour cream"/> sour cream</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="apples"/>     apples</label>
+<label><input id="accept" name="accept" type="checkbox" value="cream cheese"/> cream cheese</label>
 </div>
 </div>
 
 <div class="group-2">
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="flour"/>      flour</label>
+<label><input id="accept" name="accept" type="checkbox" value="flour"/> flour</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="butter"/>     butter</label>
+<label><input id="accept" name="accept" type="checkbox" value="rice"/> rice</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="mustard"/>    mustard</label>
+<label><input id="accept" name="accept" type="checkbox" value="pasta"/> pasta</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="chicken"/>    chicken</label>
+<label><input id="accept" name="accept" type="checkbox" value="bread"/> brad</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="cold cuts"/> cold cuts</label>
+<label><input id="accept" name="accept" type="checkbox" value="oats"/> oats</label>
 </div>
 </div>
 
 <div class="group-3">
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="bread"/>         bread</label>
+<label><input id="accept" name="accept" type="checkbox" value="mayonnaise"/> mayonnaise</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="juice"/>         juice</label>
+<label><input id="accept" name="accept" type="checkbox" value="mustard"/> mustard</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="cheese"/>        cheese</label>
+<label><input id="accept" name="accept" type="checkbox" value="ketchup"/> ketchup</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="cream cheese"/>   cream</label>
+<label><input id="accept" name="accept" type="checkbox" value="vinegar"/> vinegar</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="carrots"/>      carrots</label>
+<label><input id="accept" name="accept" type="checkbox" value="relish"/> relish</label>
 </div>
 </div>
 
 <div class="group-4">
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="salt"/>           salt</label>
+<label><input id="accept" name="accept" type="checkbox" value="apple"/> apple</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="pepper">        pepper</label>
+<label><input id="accept" name="accept" type="checkbox" value="lemon"> lemon</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="spices"/>       spices</label>
+<label><input id="accept" name="accept" type="checkbox" value="banana"/> banana</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="rice"/>           rice</label>
+<label><input id="accept" name="accept" type="checkbox" value="orange"/> orange</label>
 </div>
 <div class="ingredient">
-<label><input id="accept" name="accept" type="checkbox" value="fruit"/>         fruit</label>
+<label><input id="accept" name="accept" type="checkbox" value="strawberries"/> strawberries</label>
 </div>
 </div>
 </div>
@@ -138,44 +138,26 @@
 <div class="row">
 
 
-  <% if @response.count > 0 %>
-    <% @response.each do |recipe| %>
-    <div class="col-sm-3 spots">
-      <p class="indiv"><br>
-      <img src="<%= recipe["image"]  %>" height=220px ></img><strong><%= recipe["title"]  %></strong></p>
-      <div class="row">
-        <div class="col-sm-1">
-        </div>
-        <div class="col-sm-4 used">
-          <p><u>Used: <%= recipe["usedIngredientCount"] %></u></p>
-          <% recipe["usedIngredients"].each do |used| %>
-              <ul style="list-style: none;">
-                <li><%= used["name"].mb_chars.capitalize.to_s %></li>
-              </ul>
-          <% end %>
-        </div>
-        <div class="col-sm-1">
-        </div>
-        <div class="col-sm-4 missing">
-          <p><u>Missing: <%= recipe["missedIngredientCount"] %></u></p>
-          <% recipe["missedIngredients"].each do |used| %>
-              <ul style="list-style: none;">
-                <li><%= used["name"].mb_chars.capitalize.to_s %></li>
-              </ul>
-          <% end %>
-          <div class="col-sm-1">
-          </div>
 
-        </div>
-      </div>
-      <% if current_user %>
-        <%= form_tag('/save_recipe', method: "post", id: "save_recipe") do %>
-        <input type="hidden" name="recipe_id" value="<%= recipe["image"] %>"/>
-        <input type="hidden" name="recipe_title" value="<%= recipe["title"] %>"/>
-        <button> Save Recipe </button>
-        <% end %>
+
+  <% @response.each do |recipe| %>
+  <div class="col-sm-3 spots">
+    <div class="gallery">
+
+
+        <img src="<%= recipe["image"]  %>" height=150vh width=100% ></img><strong maxlength="10"><%= recipe["title"].first(30)%></strong>
+
+
+    <% if current_user %>
+      <%= form_tag('/save_recipe', method: "post", id: "save_recipe") do %>
+      <input type="hidden" name="recipe_id" value="<%= recipe["image"] %>"/>
+      <input type="hidden" name="recipe_title" value="<%= recipe["title"] %>"/>
+      <button> Save Recipe </button>
       <% end %>
-    </div>
+    <% end %>
+  </div>
+</div>
+
   <% end %>
 <% end %>
 <% if @response.count > 0 %>

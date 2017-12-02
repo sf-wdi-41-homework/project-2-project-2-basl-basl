@@ -4,7 +4,7 @@
 
 
 body{
-  background-image: url(http://www.publicdomainpictures.net/pictures/60000/velka/grey-gradient-background.jpg);
+  background-image: url();
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -109,64 +109,26 @@ label{
   display: inline-block;
 }
 
-.spots{
-// margin-right: 1%;
-// margin-left: 1%;
-// margin-bottom: 1%;
-// background: grey;
+
+div.gallery {
+    margin: 2%;
+    border: 1px solid #ccc;
+    float: left;
+    width: 100%;
 }
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
 
 .box h3{
   text-align:center;
-	position:relative;
-	top:80px;
 }
-.box {
-	width:70%;
-	height:200px;
-	background:#FFF;
-	margin:40px auto;
-}
-/*==================================================
- * Effect 1
- * ===============================================*/
-.effect1{
-	-webkit-box-shadow: 0 10px 6px -6px #777;
-	   -moz-box-shadow: 0 10px 6px -6px #777;
-	        box-shadow: 0 10px 6px -6px #777;
-          background-image: url();
-          background-repeat: no-repeat;
-          background-size: cover;
-}
+
 
 label.checkbox-label input[type=checkbox]{
     position: relative;
     vertical-align: middle;
     bottom: 1px;
-}
-
-.used {
-  background: #90CE49;
-  border-radius: 10px;
-}
-
-.missing {
-  background: #DF5454;
-  border-radius: 10px;
-}
-
-img {
-    width: 100%;
-    padding: 0;
-}
-
-ul {
-  padding-left: 10px;
-}
-
-div.col-sm-6.missing {
-}
-
-.save_button {
-  text-align: center;
 }
