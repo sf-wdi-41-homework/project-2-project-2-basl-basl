@@ -2,7 +2,7 @@
 <div class="entire-page">
   <div class="signup-form">
     <h1>Login</h1>
-    <%= form_for :user, url: '/user' do |f| %>
+    <%= form_for :user, url: '/sessions' do |f| %>
     <%= f.text_field :email, placeholder: "email address", class: 'individual-form' %><br>
     <%= f.password_field :password, placeholder: "Password", class: 'individual-form'%><br>
     <%= f.submit "Submit" %>
