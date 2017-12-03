@@ -138,8 +138,6 @@
 <div class="row">
 
 
-
-
   <% @response.each do |recipe| %>
   <div class="col-sm-3 spots">
     <div class="gallery">
@@ -153,13 +151,23 @@
       <input type="hidden" name="recipe_id" value="<%= recipe["image"] %>"/>
       <input type="hidden" name="recipe_title" value="<%= recipe["title"] %>"/>
       <button> Save Recipe </button>
+      <div class="dropdown">
+        <button class="dropbtn">Missing Ingredients</button>
+      <div class="dropdown-content">
+        <% @response.each do |recipe| %>
+         <% recipe["missedIngredients"].each do |obj| %>
+           <a> <%= obj["name"] %> </a>
+         <% end  %>
+         <% end %>
+      </div>
+    </div>
+        <% end %>
       <% end %>
-    <% end %>
   </div>
 </div>
 
   <% end %>
-<% if @response.count > 0 %>
+<% if @response.count == 1 %>
     <h2 align="center"> No recipes available... time to go to the store! </h2>
 <% end %>
 
